@@ -4,4 +4,5 @@ ifconfig en0 | grep broadcast | awk '{print $6}'
 
 # (b) Identify all IP adresses which are part of the same subnet
 
+ping broadcast_ipaddress
 arp -a
