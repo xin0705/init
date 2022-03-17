@@ -1,0 +1,3 @@
+# use CMD “hostname” or “hostnamectl” check the current hostname
+# use CMD “hostname newname” only change the hostname temporarily
+sudo hostname newname

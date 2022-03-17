@@ -1,0 +1,2 @@
+# Graphic session: login with username and password inside the GUI
+# ssh session: ssh [newuser name]@127.0.0.1 -p 2222

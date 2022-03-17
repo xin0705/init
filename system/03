@@ -1,0 +1,5 @@
+# modified file "/etc/hostname" to make hostname changed permanent
+# use CMD "echo “newname” > /etc/hostname"
+# Take effect after restart
+
+/etc/hostname

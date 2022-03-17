@@ -1,0 +1,15 @@
+#!/bin/bash
+
+echo "Which user do you want to delete?"
+read username
+
+check=`cat /etc/passwd | grep $username`
+if [ "$check" != "$NULL" ]; then
+	if [ "$(pgrep -u $username)" != "$NULL" ]; then
+		sudo kill -9 $(pgrep -u $username)
+	fi
+	sudo userdel -r $username
+	echo "User deleted"
+else
+	echo "User does not exist"
+fi

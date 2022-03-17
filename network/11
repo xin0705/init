@@ -1,0 +1,3 @@
+# NAT（Network Address Translation）which makes the link between local network and the outside world
+
+nat (10.60.1.1)

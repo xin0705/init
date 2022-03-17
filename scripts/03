@@ -1,0 +1,49 @@
+#!/bin/bash
+
+echo "*****COMMAND MENU******
+1-date
+2-ls
+3-who
+4-pwd
+0-exit
+"
+while :
+do
+#input
+ read -p "please input MENU number [0-4]:" n
+#delete all numbers
+ n1=`echo $n|sed s'/[0-9]//'g`
+#if empty
+ if [ -z "$n" ]
+ then
+ continue
+ fi
+#if not a number
+ if [ -n "$n1" ]
+ then
+ continue
+ fi
+#if menu number > 4
+ if [ "$n" -gt 4 ]
+ then
+ continue
+ fi
+ break
+done
+case $n in
+ 1)
+ date
+ ;;
+ 2)
+ ls
+ ;;
+ 3)
+ who
+ ;;
+ 4)
+ pwd
+ ;;
+ 0)
+ break
+ ;;
+esac
