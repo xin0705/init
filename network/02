@@ -1,8 +1,7 @@
 # (a) Identify broadcast address
-
-ifconfig en0 | grep broadcast | awk '{print $6}'
+bdip=`ifconfig en0 | grep broadcast | awk '{print $6}'`
+echo ${bdip} #broadcast address
 
 # (b) Identify all IP adresses which are part of the same subnet
-
-ping broadcast_ipaddress
-arp -a
+ping ${bdip} -t 1 #timing for 1 sec
+arp -a | awk '{print $2}' | grep `echo "${bdip//.255}"`
